@@ -1,0 +1,78 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.foliumtooltip table {
+  margin: auto;
+}
+.foliumtooltip tr {
+  text-align: left;
+}
+.foliumtooltip th {
+  padding: 2px;
+  padding-right: 8px;
+}
+
+#gingernutMap {
+  /* position: relative; */
+  width: 100%;
+  height: 50%;
+  /* left: 0%; */
+  /* top: 0%; */
+}
+#savoyMap {
+  margin-top: 50px;
+  /* position: relative; */
+  width: 100%;
+  height: 50%;
+  /* left: 0%; */
+  /* top: 0%; */
+}
+.leaflet-container {
+  font-size: 1rem;
+}
+.legend {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  padding: 5px 40px 0px 10px;
+  z-index: 9999;
+  font-size: 14px;
+  background-color: #ffffff;
+  opacity: 0.9;
+}
+
+.vic-hidden .leaflet-marker-icon .vic-svg {
+  display: none;
+}
+.nsw-hidden .leaflet-marker-icon .nsw-svg {
+  display: none;
+}
+.qld-hidden .leaflet-marker-icon .qld-svg {
+  display: none;
+}
+.sa-hidden .leaflet-marker-icon .sa-svg {
+  display: none;
+}
+
+.savoy-org-hidden .leaflet-marker-icon .savoy-org-svg {
+  display: none;
+}
+.savoy-gf-hidden .leaflet-marker-icon .savoy-gf-svg {
+  display: none;
+}
+.savoy-cp-hidden .leaflet-marker-icon .savoy-cp-svg {
+  display: none;
+}
+.jatz-org-hidden .leaflet-marker-icon .jatz-org-svg {
+  display: none;
+}
+.jatz-gf-hidden .leaflet-marker-icon .jatz-gf-svg {
+  display: none;
+}
+.jatz-cp-hidden .leaflet-marker-icon .jatz-cp-svg {
+  display: none;
+}
