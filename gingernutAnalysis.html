@@ -49,158 +49,280 @@
     <script defer src="./js/magic.js"></script>
   </head>
   <body>
-    <h1>Arnott's Gingernut Biscuits</h1>
-    <h2>Backstory</h2>
-    <p>
-      Arnotts makes 4 different kinds of gingenut Biscuits, but they only have 3
-      factories. I wonder where the Victorian SKUs are made?
-    </p>
-    <h2>Map</h2>
-    <div id="gingernutButtons">
-      <input type="checkbox" id="vicButton" checked />
-      <label for="vicButton"> VIC / TAS</label><br />
-      <input type="checkbox" id="nswButton" checked />
-      <label for="nswButton"> NSW</label><br />
-      <input type="checkbox" id="qldButton" checked />
-      <label for="qldButton"> QLD</label><br />
-      <input type="checkbox" id="saButton" checked />
-      <label for="saButton"> SA</label><br />
-    </div>
-    <div class="folium-map" id="gingernutMap">
-      <div class="legend">
-        <p>
-          <svg
-            viewBox="-2 -2 104 104"
-            height="20"
-            width="20"
-            class="vic-svg"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M50 0A50 50,0,0,0,0 50L50 50Z" fill="#1b9e77" />
-            <circle
-              r="50"
-              cx="50"
-              cy="50"
-              fill="none"
-              stroke="black"
-              stroke-width="4px"
-              stroke-opacity="0.3"
-            /></svg
-          >&emsp;VIC, TAS
-        </p>
-        <p>
-          <svg
-            viewBox="-2 -2 104 104"
-            height="20"
-            width="20"
-            class="nsw-svg"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M 100 50A50 50,0,0,0,50 0L50 50Z" fill="#d95f02" />
-            <circle
-              r="50"
-              cx="50"
-              cy="50"
-              fill="none"
-              stroke="black"
-              stroke-width="4px"
-              stroke-opacity="0.3"
-            /></svg
-          >&emsp;NSW
-        </p>
-        <p>
-          <svg
-            viewBox="-2 -2 104 104"
-            height="20"
-            width="20"
-            class="qld-svg"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M0 50A50 50,0,0,0,50 100L50 50Z" fill="#7570b3" />
-            <circle
-              r="50"
-              cx="50"
-              cy="50"
-              fill="none"
-              stroke="black"
-              stroke-width="4px"
-              stroke-opacity="0.3"
-            /></svg
-          >&emsp;QLD
-        </p>
-        <p>
-          <svg
-            viewBox="-2 -2 104 104"
-            height="20"
-            width="20"
-            class="sa-svg"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M50 100A50 50,0,0,0,100 50L50 50Z" fill="#e7298a" />
-            <circle
-              r="50"
-              cx="50"
-              cy="50"
-              fill="none"
-              stroke="black"
-              stroke-width="4px"
-              stroke-opacity="0.3"
-            /></svg
-          >&emsp;SA, WA
-        </p>
+    <main>
+      <h1>Background</h1>
+      <p>
+        To answer the nation’s most important questions, {insert bullshit here},
+        I used various Coles API’s to retrieve the inventory status for various
+        Arnott's biscuit for each Coles in Australia. This data isn’t
+        necessarily representative of the stock available in each store, but
+        what is available to be ordered through Coles Online.
+      </p>
+
+      <p>
+        For each store, I have classified each item as “In Stock”, “Out of
+        Stock” or “Not Stocked”. If it is either of the former 2, I have opted
+        that that store sells it.
+      </p>
+      <p>
+        If you’d like to hire me (or contact me for other reasons), please email
+        me <a href="mailto:alex.s.helvetica+gna@gmail.com">here</a>. Please feel
+        free to follow me on the Fediverse:
+        <a href="https://toot.cat/@alexhelvetica">@alexhelvetica@toot.cat</a>.
+        And if you're curious,
+        <a href="https://github.com/alexhelvetica/gingernut-Analysis/"
+          >here's the git</a
+        >.
+      </p>
+
+      <h1>Arnott's Gingernut</h1>
+      <p>
+        As Gingernut biscuits lovers have unfortunately discovered when
+        travelling interstate, Arnott's has multiple gingernut recipes.
+      </p>
+      <p>
+        When various biscuit manufacturers across Australia were swallowed up
+        into Arnott's in the 1960's, Arnott's decided to standardise to their own
+        recipe, the NSW one. As everyone outside of NSW (and ACT) rightfully
+        realised at the time, that variety is kinda shit to what they’re used
+        to.
+      </p>
+      <p>
+        Arnott's had to cave, in these days, companies didn’t just make a
+        product worse and get away with it. In fact, the word “Enshittification”
+        hadn’t even been invented yet.
+      </p>
+      <p>
+        These days, all 4 Gingernut biscuits are made in their factory in
+        Virginia Queensland.
+      </p>
+      <h2>Which Gingernut is sold where?</h2>
+      <div id="gingernutButtons">
+        <input type="checkbox" id="vicButton" checked />
+        <label for="vicButton"> VIC / TAS</label><br />
+        <input type="checkbox" id="nswButton" checked />
+        <label for="nswButton"> NSW</label><br />
+        <input type="checkbox" id="qldButton" checked />
+        <label for="qldButton"> QLD</label><br />
+        <input type="checkbox" id="saButton" checked />
+        <label for="saButton"> SA / WA</label><br />
       </div>
-    </div>
-    <h1>Arnott's Savoy / Jatz Biscuits</h1>
-    <h2>Map</h2>
-    <div id="savoyJatzButtons">
+      <div class="folium-map" id="gingernutMap">
+        <div class="legend">
+          <p>
+            <svg
+              viewBox="-2 -2 104 104"
+              height="20"
+              width="20"
+              class="vic-svg"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M50 0A50 50,0,0,0,0 50L50 50Z" fill="#1b9e77" />
+              <circle
+                r="50"
+                cx="50"
+                cy="50"
+                fill="none"
+                stroke="black"
+                stroke-width="4px"
+                stroke-opacity="0.3"
+              /></svg
+            >&emsp;VIC / TAS
+          </p>
+          <p>
+            <svg
+              viewBox="-2 -2 104 104"
+              height="20"
+              width="20"
+              class="nsw-svg"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M 100 50A50 50,0,0,0,50 0L50 50Z" fill="#d95f02" />
+              <circle
+                r="50"
+                cx="50"
+                cy="50"
+                fill="none"
+                stroke="black"
+                stroke-width="4px"
+                stroke-opacity="0.3"
+              /></svg
+            >&emsp;NSW
+          </p>
+          <p>
+            <svg
+              viewBox="-2 -2 104 104"
+              height="20"
+              width="20"
+              class="qld-svg"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 50A50 50,0,0,0,50 100L50 50Z" fill="#7570b3" />
+              <circle
+                r="50"
+                cx="50"
+                cy="50"
+                fill="none"
+                stroke="black"
+                stroke-width="4px"
+                stroke-opacity="0.3"
+              /></svg
+            >&emsp;QLD
+          </p>
+          <p>
+            <svg
+              viewBox="-2 -2 104 104"
+              height="20"
+              width="20"
+              class="sa-svg"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M50 100A50 50,0,0,0,100 50L50 50Z" fill="#e7298a" />
+              <circle
+                r="50"
+                cx="50"
+                cy="50"
+                fill="none"
+                stroke="black"
+                stroke-width="4px"
+                stroke-opacity="0.3"
+              /></svg
+            >&emsp;SA / WA
+          </p>
+        </div>
+      </div>
+      <h2>Strange Oddities?</h2>
+      <h2>Victoria</h2>
+      <p>
+        Caroline Springs apparently sells the Victorian, and the South
+        Australian SKUs. I assume this is bad data, but maybe Coles DC got sent
+        a pallet of SA stuff by mistake?
+      </p>
+      <p>
+        Only 1 of 2 Mildura's stores sell Gingernuts, and the Eighth Street
+        store sells the SA SKU. Traitor, but I guess it makes sense.
+      </p>
+      <h2>New South Wales</h2>
+      <p>
+        Scomo's store (Engadine) and Nano Raptor's store (Bathurst) apparently
+        sell the Victorian and Cockroaches* varieties. I guess probably bad
+        data, but who knows.
+      </p>
+      <p class="smallCorrection">
+        * I asked XSS what they're called. I don't get it, but sure.
+      </p>
+      <p>
+        Northern NSW sells the Queensland SKUs. Kempsey and Port Macquarie are
+        right in the middle of both clusters and sell both. That seems fairly
+        plausable.
+      </p>
+      <p>Similarly, Broken Hill sells both the NSW and SA biscuits.</p>
+      <h2>Mystery State</h2>
+      <p>
+        Coles #7511 apparently sells the Victorian and NSW SKU. I don't exactly
+        know what stores = [1234, 7511, 7512, 7513, 7514, 7515, 7517] are, but
+        we could query them, and they returned "In Stock" or "Out of Stock" for
+        some items.
+      </p>
+
+      <p>
+        I think they are test stores, or virtual stores that exist for hacky
+        Coles Online reasons. I know "0482CE1234" is the locationId for the Bob
+        Maguire Foundation (482 is "Coles Online Hub" in Richmond), so 1234
+        could be a "store" for an order sent to an external party?
+      </p>
+      <h1>Savoy and Jatz?!?!</h1>
+      <p>
+        Savoys were originally made by Brockhoff biscuit Company, back in the
+        1930s. When Arnott's ate up Brockhoff in the 1960’s they decided to keep
+        Savoy, as it was the dominate offering in Victoria and Tasmania. Arnott's
+        kept selling Jatz in the remaining states.
+      </p>
+
+      <p>
+        Savoy and Jatz are different biscuits. Savoy contains Golden Syrup, and
+        Jatz contains Citric Acid. The ratios of the other ingredients will
+        naturally also vary.
+      </p>
+
+      <p>
+        Arnott's in 2019 incorrectly stated on Twitter that Jatz contains Milk
+        Powder, and Savoy does not contain malt. Neither of these are the case;
+        both offerings are Vegan, and both contain malt. I think the latter was
+        said because, "It has has Golden Syrup, so it has slightly less sugar
+        because we added a different form of sugar" doesn't sound as nice.
+      </p>
+      <h2>Where are Savoy / Jatz sold?</h2>
+      <div id="savoyButtons">
         <input type="checkbox" id="savoyOrgButton" checked />
         <label for="savoyOrgButton"> Savoy Original</label><br />
         <input type="checkbox" id="jatzOrgButton" checked />
         <label for="jatzOrgButton"> Jatz Original</label><br />
-    </div>
-    <div class="folium-map" id="savoyMap">
-      <div class="legend">
-        <p>
-          <svg
-            viewBox="-2 -2 104 104"
-            height="20"
-            width="20"
-            class="savoy-org-svg"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              r="50"
-              cx="50"
-              cy="50"
-              fill="#1b9e77"
-              fill-opacity="0.7"
-              stroke="black"
-              stroke-width="4px"
-              stroke-opacity="0.3"
-            /></svg
-          >&emsp;Savoy Original
-        </p>
-        <p>
-          <svg
-            viewBox="-2 -2 104 104"
-            height="20"
-            width="20"
-            class="jatz-org-svg"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              r="50"
-              cx="50"
-              cy="50"
-              fill="#d95f02"
-              fill-opacity="0.7"
-              stroke="black"
-              stroke-width="4px"
-              stroke-opacity="0.3"
-            /></svg
-          >&emsp;Jatz Original
-        </p>
       </div>
-    </div>
+      <div class="folium-map" id="savoyMap">
+        <div class="legend">
+          <p>
+            <svg
+              viewBox="-2 -2 104 104"
+              height="20"
+              width="20"
+              class="savoy-org-svg"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                r="50"
+                cx="50"
+                cy="50"
+                fill="#1b9e77"
+                fill-opacity="0.7"
+                stroke="black"
+                stroke-width="4px"
+                stroke-opacity="0.3"
+              /></svg
+            >&emsp;Savoy Original
+          </p>
+          <p>
+            <svg
+              viewBox="-2 -2 104 104"
+              height="20"
+              width="20"
+              class="jatz-org-svg"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                r="50"
+                cx="50"
+                cy="50"
+                fill="#d95f02"
+                fill-opacity="0.7"
+                stroke="black"
+                stroke-width="4px"
+                stroke-opacity="0.3"
+              /></svg
+            >&emsp;Jatz Original
+          </p>
+        </div>
+      </div>
+      <h2>Interesting Findings?</h2>
+      <p>
+        Both stores in Albury (NSW) as well as Deniliquin (NSW) stock savoys
+        over Jatz. Proving that a particular someone has always been a Savoy
+        girl.
+      </p>
+      <p>
+        There are no stores that sells both Savoy and Jatz*. This is true of the
+        Original, Cracked Pepper and Gluten Free Original varieties.
+      </p>
+      <p class="smallCorrection">
+        * The single serve "snack packs" with cheese or/meat are only available
+        with Jatz. Those are sold in all states.
+      </p>
+    </main>
+    <footer>
+      <p>
+        mow mow mow - alex helvetica -
+        <a href="https://toot.cat/@alexhelvetica">@alexhelvetica@toot.cat</a>
+      </p>
+    </footer>
   </body>
 </html>
