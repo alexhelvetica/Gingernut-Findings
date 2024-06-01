@@ -49,7 +49,7 @@ function geo_json_5b1621fa644a152f9c8eef7173935403_pointToLayer(
 
   const iconOptions = {
     className: "empty",
-    html: '\u003csvg viewBox="-2 -2 104 104" height="20" width="20" class="vic-svg" xmlns="http://www.w3.org/2000/svg"\u003e\u003cpath d="M50 0A50 50,0,0,0,0 50L50 50Z" fill="#1b9e77"/\u003e\u003ccircle r="50" cx="50" cy="50" fill="none" stroke="black" stroke-width="4px" stroke-opacity="0.3" /\u003e\u003c/svg\u003e',
+    html: '\u003csvg viewBox="-2 -2 104 104" height="20" width="20" class="savoy-org-svg" xmlns="http://www.w3.org/2000/svg"\u003e\u003cpath d="M50 0A50 50,0,0,0,0 50L50 50Z" fill="#1b9e77"/\u003e\u003ccircle r="50" cx="50" cy="50" fill="none" stroke="black" stroke-width="4px" stroke-opacity="0.3" /\u003e\u003c/svg\u003e',
   };
   const iconRootAlias = L;
   opts.icon = new iconRootAlias.DivIcon(iconOptions);
@@ -421,7 +421,7 @@ function geo_json_75f4217577cc8220f9a396cf9ddaa9d9_pointToLayer(
 
   const iconOptions = {
     className: "empty",
-    html: '\u003csvg viewBox="-2 -2 104 104" height="20" width="20" class="sa-svg" xmlns="http://www.w3.org/2000/svg"\u003e\u003cpath d="M50 100A50 50,0,0,0,100 50L50 50Z" fill="#e7298a"/\u003e\u003ccircle r="50" cx="50" cy="50" fill="none" stroke="black" stroke-width="4px" stroke-opacity="0.3" /\u003e\u003c/svg\u003e',
+    html: '\u003csvg viewBox="-2 -2 104 104" height="20" width="20" class="jatz-org-svg" xmlns="http://www.w3.org/2000/svg"\u003e\u003cpath d="M50 100A50 50,0,0,0,100 50L50 50Z" fill="#e7298a"/\u003e\u003ccircle r="50" cx="50" cy="50" fill="none" stroke="black" stroke-width="4px" stroke-opacity="0.3" /\u003e\u003c/svg\u003e',
   };
   const iconRootAlias = L;
   opts.icon = new iconRootAlias.DivIcon(iconOptions);

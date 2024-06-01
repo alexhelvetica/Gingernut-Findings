@@ -15,18 +15,26 @@ body {
   padding: 2px;
   padding-right: 8px;
 }
+#gingernutButtons {
+    height: 30px;
+    column-count: 4;
+    width: 80%;
+}
+  #savoyJatzButtons {
+    column-count: 2;
+}
 
 #gingernutMap {
   /* position: relative; */
-  width: 100%;
+  width: 80%;
   height: 50%;
   /* left: 0%; */
   /* top: 0%; */
 }
 #savoyMap {
-  margin-top: 50px;
+  /* margin-top: 50px; */
   /* position: relative; */
-  width: 100%;
+  width: 80%;
   height: 50%;
   /* left: 0%; */
   /* top: 0%; */
@@ -35,10 +43,10 @@ body {
   font-size: 1rem;
 }
 .legend {
-  position: fixed;
-  bottom: 50px;
-  left: 50px;
-  padding: 5px 40px 0px 10px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 5px 15px 0px 10px;
   z-index: 9999;
   font-size: 14px;
   background-color: #ffffff;
