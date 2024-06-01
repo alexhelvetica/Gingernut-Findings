@@ -15,13 +15,11 @@ body {
   padding: 2px;
   padding-right: 8px;
 }
-#gingernutButtons {
-    height: 30px;
-    column-count: 4;
-    width: 80%;
-}
-  #savoyJatzButtons {
-    column-count: 2;
+#gingernutButtons,
+#savoyJatzButtons {
+  height: 20px;
+  column-count: 4;
+  width: 80%;
 }
 
 #gingernutMap {
@@ -69,18 +67,7 @@ body {
 .savoy-org-hidden .leaflet-marker-icon .savoy-org-svg {
   display: none;
 }
-.savoy-gf-hidden .leaflet-marker-icon .savoy-gf-svg {
-  display: none;
-}
-.savoy-cp-hidden .leaflet-marker-icon .savoy-cp-svg {
-  display: none;
-}
+
 .jatz-org-hidden .leaflet-marker-icon .jatz-org-svg {
-  display: none;
-}
-.jatz-gf-hidden .leaflet-marker-icon .jatz-gf-svg {
-  display: none;
-}
-.jatz-cp-hidden .leaflet-marker-icon .jatz-cp-svg {
   display: none;
 }

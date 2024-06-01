@@ -32,32 +32,8 @@ savoyOrgButton.onchange = function () {
   else savoyMap.classList.add("savoy-org-hidden");
 };
 
-var savoyCpButton = document.getElementById("savoyCpButton");
-savoyCpButton.onchange = function () {
-  if (savoyCpButton.checked) savoyMap.classList.remove("savoy-cp-hidden");
-  else savoyMap.classList.add("savoy-cp-hidden");
-};
-
-var savoyGfButton = document.getElementById("savoyGfButton");
-savoyGfButton.onchange = function () {
-  if (savoyGfButton.checked) savoyMap.classList.remove("savoy-gf-hidden");
-  else savoyMap.classList.add("savoy-gf-hidden");
-};
-
 var jatzOrgButton = document.getElementById("jatzOrgButton");
 jatzOrgButton.onchange = function () {
   if (jatzOrgButton.checked) savoyMap.classList.remove("jatz-org-hidden");
   else savoyMap.classList.add("jatz-org-hidden");
-};
-
-var jatzCpButton = document.getElementById("jatzCpButton");
-jatzCpButton.onchange = function () {
-  if (jatzCpButton.checked) savoyMap.classList.remove("jatz-cp-hidden");
-  else savoyMap.classList.add("jatz-cp-hidden");
-};
-
-var jatzGfButton = document.getElementById("jatzGfButton");
-jatzGfButton.onchange = function () {
-  if (jatzGfButton.checked) savoyMap.classList.remove("jatz-gf-hidden");
-  else savoyMap.classList.add("jatz-gf-hidden");
 };

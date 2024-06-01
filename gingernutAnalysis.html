@@ -51,17 +51,20 @@
   <body>
     <h1>Arnott's Gingernut Biscuits</h1>
     <h2>Backstory</h2>
-    <p>Arnotts makes 4 different kinds of gingenut Biscuits, but they only have 3 factories. I wonder where the Victorian SKUs are made?</p>
+    <p>
+      Arnotts makes 4 different kinds of gingenut Biscuits, but they only have 3
+      factories. I wonder where the Victorian SKUs are made?
+    </p>
     <h2>Map</h2>
     <div id="gingernutButtons">
-            <input type="checkbox" id="vicButton" checked />
-            <label for="vicButton"> VIC / TAS</label><br />
-            <input type="checkbox" id="nswButton" checked />
-            <label for="nswButton"> NSW</label><br />
-            <input type="checkbox" id="qldButton" checked />
-            <label for="qldButton"> QLD</label><br />
-            <input type="checkbox" id="saButton" checked />
-            <label for="saButton"> SA</label><br />
+      <input type="checkbox" id="vicButton" checked />
+      <label for="vicButton"> VIC / TAS</label><br />
+      <input type="checkbox" id="nswButton" checked />
+      <label for="nswButton"> NSW</label><br />
+      <input type="checkbox" id="qldButton" checked />
+      <label for="qldButton"> QLD</label><br />
+      <input type="checkbox" id="saButton" checked />
+      <label for="saButton"> SA</label><br />
     </div>
     <div class="folium-map" id="gingernutMap">
       <div class="legend">
@@ -150,24 +153,10 @@
     <h1>Arnott's Savoy / Jatz Biscuits</h1>
     <h2>Map</h2>
     <div id="savoyJatzButtons">
-        <section id="savoyButton">
-            <h3>Savoy</h3>
-            <input type="checkbox" id="savoyOrgButton" checked />
-            <label for="savoyOrgButton"> Original</label><br />
-            <input type="checkbox" id="savoyCpButton" checked />
-            <label for="savoyCpButton"> Cracked Pepper</label><br />
-            <input type="checkbox" id="savoyGfButton" checked />
-            <label for="savoyGfButton"> Gluten Free Original</label><br />
-        </section>
-        <section id="jatzButtons">
-            <h3>Jatz</h3>
-            <input type="checkbox" id="jatzOrgButton" checked />
-            <label for="jatzOrgButton"> Original</label><br />
-            <input type="checkbox" id="jatzCpButton" checked />
-            <label for="jatzCpButton"> Cracked Pepper</label><br />
-            <input type="checkbox" id="jatzGfButton" checked />
-            <label for="jatzGfButton"> Gluten Free Original</label><br />
-        </section>
+        <input type="checkbox" id="savoyOrgButton" checked />
+        <label for="savoyOrgButton"> Savoy Original</label><br />
+        <input type="checkbox" id="jatzOrgButton" checked />
+        <label for="jatzOrgButton"> Jatz Original</label><br />
     </div>
     <div class="folium-map" id="savoyMap">
       <div class="legend">
@@ -176,47 +165,41 @@
             viewBox="-2 -2 104 104"
             height="20"
             width="20"
-            class="vic-svg"
+            class="savoy-org-svg"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M50 0A50 50,0,0,0,0 50L50 50Z" fill="#1b9e77" />
             <circle
               r="50"
               cx="50"
               cy="50"
-              fill="none"
+              fill="#1b9e77"
+              fill-opacity="0.7"
               stroke="black"
               stroke-width="4px"
               stroke-opacity="0.3"
             /></svg
           >&emsp;Savoy Original
         </p>
-        <p><svg height="20" width="20"></svg>&emsp;Savoy Cracked Pepper</p>
-        <p>
-          <svg height="20" width="20"></svg>&emsp;Savoy Original Gluten Free
-        </p>
         <p>
           <svg
             viewBox="-2 -2 104 104"
             height="20"
             width="20"
-            class="sa-svg"
+            class="jatz-org-svg"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M50 100A50 50,0,0,0,100 50L50 50Z" fill="#e7298a" />
             <circle
               r="50"
               cx="50"
               cy="50"
-              fill="none"
+              fill="#d95f02"
+              fill-opacity="0.7"
               stroke="black"
               stroke-width="4px"
               stroke-opacity="0.3"
             /></svg
           >&emsp;Jatz Original
         </p>
-        <p><svg height="20" width="20"></svg>&emsp;Jatz Cracked Pepper</p>
-        <p><svg height="20" width="20"></svg>&emsp;Jatz Original Gluten Free</p>
       </div>
     </div>
   </body>
