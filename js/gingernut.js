@@ -92,7 +92,7 @@ function geo_json_b1f649515a0637e20fffe7366e421069_add(data) {
   geo_json_b1f649515a0637e20fffe7366e421069.addData(data);
 }
 
-fetch("./json/gn-vic.json")
+fetch("./vis/json/gn-vic.json")
   .then((response) => response.json())
   .then((json) => geo_json_b1f649515a0637e20fffe7366e421069_add(json));
 
@@ -212,7 +212,7 @@ var geo_json_feb10b7cf21a15d041ccf3f7432d21df = L.geoJson(null, {
 function geo_json_feb10b7cf21a15d041ccf3f7432d21df_add(data) {
   geo_json_feb10b7cf21a15d041ccf3f7432d21df.addData(data);
 }
-fetch("./json/gn-nsw.json")
+fetch("./vis/json/gn-nsw.json")
   .then((response) => response.json())
   .then((json) => geo_json_feb10b7cf21a15d041ccf3f7432d21df_add(json));
 
@@ -332,7 +332,7 @@ var geo_json_929ea7077856ab95498400e4717aa2e7 = L.geoJson(null, {
 function geo_json_929ea7077856ab95498400e4717aa2e7_add(data) {
   geo_json_929ea7077856ab95498400e4717aa2e7.addData(data);
 }
-fetch("./json/gn-qld.json")
+fetch("./vis/json/gn-qld.json")
   .then((response) => response.json())
   .then((json) => geo_json_929ea7077856ab95498400e4717aa2e7_add(json));
 
@@ -452,7 +452,7 @@ var geo_json_42f26c03de526ec966c7210de9c5d35c = L.geoJson(null, {
 function geo_json_42f26c03de526ec966c7210de9c5d35c_add(data) {
   geo_json_42f26c03de526ec966c7210de9c5d35c.addData(data);
 }
-fetch("./json/gn-sa.json")
+fetch("./vis/json/gn-sa.json")
   .then((response) => response.json())
   .then((json) => geo_json_42f26c03de526ec966c7210de9c5d35c_add(json));
 

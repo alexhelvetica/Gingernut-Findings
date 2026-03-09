@@ -19,7 +19,7 @@ var tile_layer_5521a6bc085de9a31049d3442491888c = L.tileLayer(
     opacity: 1,
     subdomains: "abcd",
     tms: false,
-  }
+  },
 );
 
 tile_layer_5521a6bc085de9a31049d3442491888c.addTo(savoyMap);
@@ -38,7 +38,7 @@ function geo_json_5b1621fa644a152f9c8eef7173935403_highlighter(feature) {
 }
 function geo_json_5b1621fa644a152f9c8eef7173935403_pointToLayer(
   feature,
-  latlng
+  latlng,
 ) {
   var opts = {};
 
@@ -57,7 +57,7 @@ function geo_json_5b1621fa644a152f9c8eef7173935403_pointToLayer(
 
 function geo_json_5b1621fa644a152f9c8eef7173935403_onEachFeature(
   feature,
-  layer
+  layer,
 ) {
   layer.on({
     mouseout: function (e) {
@@ -69,7 +69,7 @@ function geo_json_5b1621fa644a152f9c8eef7173935403_onEachFeature(
       if (typeof e.target.setStyle === "function") {
         const highlightStyle =
           geo_json_5b1621fa644a152f9c8eef7173935403_highlighter(
-            e.target.feature
+            e.target.feature,
           );
         e.target.setStyle(highlightStyle);
       }
@@ -86,7 +86,7 @@ var geo_json_5b1621fa644a152f9c8eef7173935403 = L.geoJson(null, {
 function geo_json_5b1621fa644a152f9c8eef7173935403_add(data) {
   geo_json_5b1621fa644a152f9c8eef7173935403.addData(data);
 }
-fetch("./json/sj-s-o.json")
+fetch("./vis/json/sj-s-o.json")
   .then((response) => response.json())
   .then((json) => geo_json_5b1621fa644a152f9c8eef7173935403_add(json));
 
@@ -132,16 +132,16 @@ geo_json_5b1621fa644a152f9c8eef7173935403.bindTooltip(
             <th>${aliases[i]}</th>
             
             <td>${handleObject(layer.feature.properties[v])}</td>
-        </tr>`
+        </tr>`,
           )
-          .join("")
+          .join(""),
       ) +
       "</table>";
     div.innerHTML = table;
 
     return div;
   },
-  { className: "foliumtooltip", sticky: true }
+  { className: "foliumtooltip", sticky: true },
 );
 
 geo_json_5b1621fa644a152f9c8eef7173935403.addTo(savoyMap);
@@ -160,7 +160,7 @@ function geo_json_75f4217577cc8220f9a396cf9ddaa9d9_highlighter(feature) {
 }
 function geo_json_75f4217577cc8220f9a396cf9ddaa9d9_pointToLayer(
   feature,
-  latlng
+  latlng,
 ) {
   var opts = {};
 
@@ -179,7 +179,7 @@ function geo_json_75f4217577cc8220f9a396cf9ddaa9d9_pointToLayer(
 
 function geo_json_75f4217577cc8220f9a396cf9ddaa9d9_onEachFeature(
   feature,
-  layer
+  layer,
 ) {
   layer.on({
     mouseout: function (e) {
@@ -191,7 +191,7 @@ function geo_json_75f4217577cc8220f9a396cf9ddaa9d9_onEachFeature(
       if (typeof e.target.setStyle === "function") {
         const highlightStyle =
           geo_json_75f4217577cc8220f9a396cf9ddaa9d9_highlighter(
-            e.target.feature
+            e.target.feature,
           );
         e.target.setStyle(highlightStyle);
       }
@@ -208,7 +208,7 @@ var geo_json_75f4217577cc8220f9a396cf9ddaa9d9 = L.geoJson(null, {
 function geo_json_75f4217577cc8220f9a396cf9ddaa9d9_add(data) {
   geo_json_75f4217577cc8220f9a396cf9ddaa9d9.addData(data);
 }
-fetch("./json/sj-j-o.json")
+fetch("./vis/json/sj-j-o.json")
   .then((response) => response.json())
   .then((json) => geo_json_75f4217577cc8220f9a396cf9ddaa9d9_add(json));
 
@@ -254,16 +254,16 @@ geo_json_75f4217577cc8220f9a396cf9ddaa9d9.bindTooltip(
             <th>${aliases[i]}</th>
             
             <td>${handleObject(layer.feature.properties[v])}</td>
-        </tr>`
+        </tr>`,
           )
-          .join("")
+          .join(""),
       ) +
       "</table>";
     div.innerHTML = table;
 
     return div;
   },
-  { className: "foliumtooltip", sticky: true }
+  { className: "foliumtooltip", sticky: true },
 );
 
 geo_json_75f4217577cc8220f9a396cf9ddaa9d9.addTo(savoyMap);
@@ -273,5 +273,5 @@ savoyMap.fitBounds(
     [-42.974982, 114.616117],
     [-12.371249, 153.570242],
   ],
-  { padding: [30, 30] }
+  { padding: [30, 30] },
 );
