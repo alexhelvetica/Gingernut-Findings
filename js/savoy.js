@@ -7,7 +7,7 @@ var savoyMap = L.map("savoyMap", {
 });
 
 var tile_layer_5521a6bc085de9a31049d3442491888c = L.tileLayer(
-  "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+  "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_4qly_1_95d06a4beece7c1ff0528341",
   {
     attribution:
       '\u0026copy; \u003ca href="https://www.openstreetmap.org/copyright"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href="https://carto.com/attributions"\u003eCARTO\u003c/a\u003e',
